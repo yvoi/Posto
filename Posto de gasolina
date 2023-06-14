@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class PostoCombustivel {
+
+    public static void main(String[] args) {
+
+        
+
+        Scanner sc = new Scanner(System.in);
+
+        int tipoCombustivel;
+
+        double precoLitro, valorCompra;
+
+        int quantidade;
+
+        
+
+        System.out.println("Bem-vindo ao posto de combustível!");
+
+        System.out.println("Qual combustível você deseja comprar?");
+
+        System.out.println("1 - Gasolina");
+
+        System.out.println("2 - Etanol");
+
+        tipoCombustivel = sc.nextInt();
+
+        
+
+        if (tipoCombustivel == 1) {
+
+            precoLitro = 4.79;
+
+            System.out.println("Qual a quantidade de gasolina (em litros) que você deseja comprar?");
+
+            quantidade = sc.nextInt();
+
+            valorCompra = quantidade * precoLitro;
+
+            System.out.printf("Valor a pagar: R$ %.2f", valorCompra);
+
+        } else if (tipoCombustivel == 2) {
+
+            System.out.println("Quantos litros de etanol você deseja comprar?");
+
+            quantidade = sc.nextInt();
+
+            if (quantidade < 5) {
+
+                precoLitro = 3.65;
+
+            } else if (quantidade < 10) {
+
+                precoLitro = 3.65 * 0.9;
+
+            } else {
+
+                precoLitro = 3.65 * 0.93;
+
+            }
+
+            valorCompra = quantidade * precoLitro;
+
+            System.out.printf("Valor a pagar: R$ %.2f", valorCompra);
+
+        } else {
+
+            System.out.println("Opção inválida. Por favor, escolha 1 para gasolina ou 2 para etanol.");
+
+        }
+
+        
+
+        sc.close();
+
+    }
+
+}
